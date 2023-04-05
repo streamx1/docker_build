@@ -31,17 +31,17 @@ jobs:
             ghcr.io/streamx1/docker-image:${{ github.run_number }}
 
 
-- name: Notify Slack on success
-        if: ${{ success() }}
-        uses: slack/webhook-action@v2
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        with:
-          payload: '{"text": "The Docker image has been built and pushed successfully."}'
+      - name: Notify Slack on success
+              if: ${{ success() }}
+              uses: slack/webhook-action@v2
+              env:
+                SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+              with:
+                payload: '{"text": "The Docker image has been built and pushed successfully."}'
       - name: Notify Slack on failure
-        if: ${{ failure() }}
-        uses: slack/webhook-action@v2
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        with:
-          payload: '{"text": "The Docker image build and push has failed."}'
+              if: ${{ failure() }}
+              uses: slack/webhook-action@v2
+              env:
+                SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+              with:
+                payload: '{"text": "The Docker image build and push has failed."}'
