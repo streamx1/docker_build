@@ -34,7 +34,7 @@ jobs:
         if: ${{ success() }}
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_CHANNEL: U04QJKZR6CS
           SLACK_MESSAGE: "OK. The Docker image has been built and pushed successfuly."
 
@@ -42,6 +42,6 @@ jobs:
         if: ${{ failure() }}
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_CHANNEL: U04QJKZR6CS
           SLACK_MESSAGE: "FAIL. The Docker image has been built and pushed fail."
