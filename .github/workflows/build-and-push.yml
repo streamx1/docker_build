@@ -17,7 +17,7 @@ jobs:
         run: docker push ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:${{ github.ref }}
 
 
-name: Build and Push Docker Image
+name: Build and Push Docker Image1
 on:
   push:
     tags:
