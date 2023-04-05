@@ -32,15 +32,15 @@ jobs:
 
       - name: Notify Slack on success
         if: ${{ success() }}
-        uses: tokorom/action-slack-incoming-webhook@main
+        uses: rtCamp/action-slack-notify@v2
         env:
-          INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
           payload: '{"text": "The Docker image has been built and pushed successfully."}'
       - name: Notify Slack on failure
         if: ${{ failure() }}
-        uses: tokorom/action-slack-incoming-webhook@main
+        uses: rtCamp/action-slack-notify@v2
         env:
-          INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
           payload: '{"text": "The Docker image build and push has failed."}'
