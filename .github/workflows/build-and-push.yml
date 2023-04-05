@@ -21,5 +21,5 @@ jobs:
           context: .
           push: true
           tags: |
-            docker.io/streamx11/your-image-name:${{ github.run_number }}
-            ghcr.io/streamx1/your-image-name:${{ github.run_number }}
+            docker.io/streamx11/docker-image:${{ github.run_number }}
+            ghcr.io/streamx1/dockerr-image:${{ github.run_number }}
