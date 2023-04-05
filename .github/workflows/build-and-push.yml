@@ -38,7 +38,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           repo: streamx11/your-image-name
-          tags: latest
+          
       - name: Push to Github Container Registry
         uses: docker/login-action@v1
         with:
