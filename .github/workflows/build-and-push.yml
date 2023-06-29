@@ -1,5 +1,5 @@
 name: Build and Push Docker Image
-# 12345
+
 on:
   push:
     tags:
@@ -28,8 +28,7 @@ jobs:
           push: true
           tags: |
             docker.io/streamx11/docker-image:${{ github.run_number }}
-            ghcr.io/streamx1/docker-image:${{ github.run_number }}
-
+            ghcr.io/streamx1/docker-image:1
       - name: Notify Slack on success
         if: ${{ success() }}
         uses: rtCamp/action-slack-notify@v2
